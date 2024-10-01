@@ -8,4 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxthub/core',
   ],
+  hub: {
+    blob: true
+  }
 })
