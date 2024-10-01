@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="border-light-50 border h-80 w-80 rounded-full overflow-clip">
-        <img src="/img/gradPhoto.png" class="object-cover" />
+        <img src="/images/gradPhoto.png" class="object-cover" />
       </div>
     </section>
 
