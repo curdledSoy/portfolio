@@ -13,7 +13,9 @@
         </div>
       </div>
       <div class="border-light-50 border h-80 w-80 rounded-full overflow-clip">
-        <img src="/images/gradPhoto.png" class="object-cover" />
+        <!-- /images/gradPhoto.png -->
+
+        <img src="" class="object-cover" />
       </div>
     </section>
 
