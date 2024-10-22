@@ -26,13 +26,16 @@
         </p>
       </div>
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="shadow-lg rounded-lg p-6 bg-white dark:bg-gray-800 hover:shadow-2xl transition"
+        <div
+          class="shadow-lg rounded-lg p-6 bg-white dark:bg-gray-800 hover:shadow-2xl transition flex flex-col justify-between"
           v-for="project in projects" :key="project._id">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{{ project.title }}</h3>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            {{ project.description }}
-          </p>
-          <UButton @click="showProject(project)">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{{ project.title }}</h3>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              {{ project.description }}
+            </p>
+          </div>
+          <UButton @click="showProject(project)" class="mt-auto self-start">
             See More
           </UButton>
 
@@ -52,16 +55,20 @@
       </div>
       <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="shadow-lg rounded-lg p-6 bg-white dark:bg-gray-800 hover:shadow-2xl transition">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Bachelor of Science in Computer Science</h3>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            XYZ University
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Bachelor of Science in Computer Science and IT
+            Management
+          </h3>
+          <p class="mt-2  text-gray-800 dark:text-gray-200">
+            The University of Auckland
           </p>
+          <h4 class="font-thin text-sm text-gray-600 dark:text-gray-400">2020-2024</h4>
         </div>
         <div class="shadow-lg rounded-lg p-6 bg-white dark:bg-gray-800 hover:shadow-2xl transition">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Certified Full Stack Developer</h3>
-          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            ABC Bootcamp
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Academic Certificate in Business Analysis</h3>
+          <p class="mt-2 text-gray-800 dark:text-gray-200">
+            International Institute of Business Analysis
           </p>
+          <h4 class="font-thin text-sm text-gray-600 dark:text-gray-400">2022</h4>
         </div>
         <div class="shadow-lg rounded-lg p-6 bg-white dark:bg-gray-800 hover:shadow-2xl transition">
           <h3 class="text-xl font-semibold text-gray-800 dark:text-white">JavaScript Advanced Certification</h3>

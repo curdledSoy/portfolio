@@ -3,7 +3,7 @@
     class="backdrop-blur border-b border-gray-200 dark:border-gray-800 -mb-px sticky top-0 z-50 lg:!border-transparent bg-gray-50 dark:bg-gray-950">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between gap-3 h-[--header-height]">
       <div class="lg:flex-1 flex items-center gap-1.5">
-        <NuxtLink class="flex-shrink-0 font-semibold text-xl  text-gray-900 dark:text-white flex items-end gap-1.5"
+        <NuxtLink class="flex-shrink-0 font-semibold text-xl items-center  text-gray-900 dark:text-white flex gap-1.5"
           to="/">
           <UAvatar alt="Tom Brittenden" /> <span>Tom Brittenden</span>
         </NuxtLink>
@@ -22,6 +22,8 @@
         </li>
       </ul>
 
+      
+
       <div class="flex items-center justify-end lg:flex-1 gap-1.5">
         <ULink to="https://github.com/curdledSoy">
           <UIcon class="h-5 w-5" name="i-simple-icons:github" />
@@ -32,7 +34,13 @@
         <ULink to="https://www.x.com/tom_brittenden/">
           <UIcon class="h-5 w-5" name="i-simple-icons:x" />
         </ULink>
+        
       </div>
+      <UButton class="md:hidden" icon="heroicons-outline:bars-3" @click="menuOpen = !menuOpen"/>
+
+      <USlideover v-model="menuOpen">
+        <UVerticalNavigation @click="menuOpen = !menuOpen" :links/>
+      </USlideover>
     </div>
   </header>
 </template>
@@ -40,7 +48,7 @@
 <script lang="ts" setup>
 const router = useRouter()
 const route = useRoute()
-const links = [{ name: 'Home', to: { to: '', hash: "#home" }, id: "home" }, { name: 'Projects', to: "#projects", id: "projects" }, { name: 'Qualifications', to: "#qualifications", id: "qualifications" }, { name: 'Contact', to: "#contact", id: "contact" }]
+const links = [{ name: 'Home', to: { to: '', hash: "#home" }, id: "home", label:'Home' }, { name: 'Projects', to: "#projects", id: "projects", label: 'Projects' }, { name: 'Qualifications', label: 'Qualifications', to: "#qualifications", id: "qualifications" }, { name: 'Contact', label: 'Contact',to: "#contact", id: "contact" }]
 
 const activeSection = useState('activeSection', () => "home")
 
@@ -50,6 +58,7 @@ const sections = [
   { id: 'qualifications', offset: 0 },
   { id: 'contact', offset: 0 }
 ];
+const menuOpen = useState('mobileMenuOpen', ()=> false)
 
 const updateActiveSection = () => {
   const scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust for middle of screen
